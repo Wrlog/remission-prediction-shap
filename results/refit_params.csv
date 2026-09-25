@@ -1,0 +1,5 @@
+algo,inner_auc,model__C,model__l1_ratio,model__estimator__class_weight,model__estimator__max_depth,model__estimator__max_features,model__estimator__min_samples_leaf,model__n_features_to_select,model__estimator__colsample_bytree,model__estimator__learning_rate,model__estimator__min_child_weight,model__estimator__n_estimators,model__estimator__reg_lambda,model__estimator__subsample,model__estimator__depth,model__estimator__iterations,model__estimator__l2_leaf_reg
+enet,0.9279250161603102,0.3018082181055943,0.13192396196482692,,,,,,,,,,,,,,
+rf,0.8747575953458305,,,balanced,6,0.33,10,12,,,,,,,,,
+xgb,0.8846557853910795,,,,3,,,6,0.5539322060834145,0.046051511693897276,2.957677661097503,136,0.5149865397431869,0.696092556963794,,,
+cat,0.8768584356819651,,,,,,,6,,0.11074352186733684,,,,,3,120,26.43464927524259

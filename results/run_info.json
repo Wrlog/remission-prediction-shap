@@ -1,0 +1,54 @@
+{
+  "quick": false,
+  "seed": 7310,
+  "n_patients": 189,
+  "n_excluded_no_outcome": 1,
+  "prevalence": 0.7195767195767195,
+  "settings": {
+    "N_REPEATS": 3,
+    "N_SEARCH": 6,
+    "INNER_FOLDS": 4,
+    "SENS_REPEATS": 1,
+    "N_BOOT": 1000,
+    "SENS_IMPUTERS": [
+      "mean",
+      "knn",
+      "iterative",
+      "locf"
+    ],
+    "OUTER_FOLDS": 5,
+    "RFE_STEP": 0.3333333333333333,
+    "RFE_KEEP": [
+      6,
+      12,
+      18
+    ],
+    "MISSING_DROP": 0.7
+  },
+  "champion": {
+    "step": "L4",
+    "algo": "enet",
+    "auc_mean": 0.9252380952380953,
+    "auc_run_sd": 0.006332749471857798,
+    "pooled_auc": 0.9255456899741028,
+    "averaged_oof_auc": 0.9300776914539401,
+    "bootstrap_ci": [
+      0.8927580466148723,
+      0.9603288013318536
+    ],
+    "ceiling_auc_true_probability": 0.9805771365149833
+  },
+  "n_jobs": 564,
+  "workers": 12,
+  "runtime_seconds": 673.7,
+  "python": "3.12.10",
+  "versions": {
+    "numpy": "2.5.3",
+    "pandas": "3.0.6",
+    "scikit-learn": "1.9.1",
+    "xgboost": "3.4.1",
+    "catboost": "1.2.10",
+    "shap": "0.52.0",
+    "matplotlib": "3.11.2"
+  }
+}

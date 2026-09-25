@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "remission-prediction-shap"
+version = "0.1.0"
+description = "Predicting long-term response to a hypothetical drug from early-treatment data and PK/PD estimates, on simulated studies"
+authors = [{ name = "Wen Rui Tan" }]
+license = { text = "MIT" }
+requires-python = ">=3.12"
+dependencies = [
+    "numpy>=2.0",
+    "pandas>=2.2",
+    "scipy>=1.13",
+    "scikit-learn>=1.8",
+    "joblib>=1.4",
+    "xgboost>=2.1",
+    "catboost>=1.2.7",
+    "shap>=0.46",
+    "matplotlib>=3.9",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=8"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+filterwarnings = [
+    "ignore::UserWarning",
+    "ignore::FutureWarning",
+    "ignore::sklearn.exceptions.ConvergenceWarning",
+]

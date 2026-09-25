@@ -1,0 +1,32 @@
+name: tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: requirements.txt
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+          pip install --no-deps -e .
+
+      - name: Run tests
+        run: python -m pytest
+
+      - name: Run the pipeline and figures in quick mode
+        run: |
+          python scripts/run_pipeline.py --quick --out /tmp/results --data /tmp/data
+          python scripts/make_figures.py --results /tmp/results --figures /tmp/figures
