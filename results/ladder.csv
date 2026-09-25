@@ -1,0 +1,7 @@
+step,label,blocks,n_features,known_day,kind
+L1,Baseline clinical,baseline clinical,9,0,ladder
+L2,+ baseline PK/PD,baseline clinical + PK/PD fit to infusion 2,14,21,ladder
+L3,+ clinical to infusion 3,baseline clinical + clinical at infusion 2 + clinical at infusion 3 + PK/PD fit to infusion 2,28,42,ladder
+L4,PK/PD updated at infusion 4,baseline clinical + clinical at infusion 2 + clinical at infusion 3 + PK/PD fit to infusion 4,28,98,ladder
+L5,Everything,baseline clinical + clinical at infusion 2 + clinical at infusion 3 + PK/PD fit to infusion 2 + PK/PD fit to infusion 3 + PK/PD fit to infusion 4,38,98,ladder
+L4r,Raw data to infusion 4,baseline clinical + clinical at infusion 2 + clinical at infusion 3 + clinical at infusion 4 + PK/PD fit to infusion 2,35,98,check

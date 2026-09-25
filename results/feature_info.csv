@@ -1,0 +1,46 @@
+feature,label,block,pkpd,known_day
+age,age,base,False,0
+female,female,base,False,0
+weight,weight,base,False,0
+activity,activity score,base,False,0
+imm,co-medication,base,False,0
+v1_alb,ALB (inf 1),base,False,0
+v1_inf,INF (inf 1),base,False,0
+v1_plt,PLT (inf 1),base,False,0
+v1_bio,biomarker (inf 1),base,False,0
+v2_alb,ALB (inf 2),clin_v2,False,21
+v2_inf,INF (inf 2),clin_v2,False,21
+v2_plt,PLT (inf 2),clin_v2,False,21
+v2_bio,biomarker (inf 2),clin_v2,False,21
+v2_bio_change,biomarker change (inf 2),clin_v2,False,21
+v2_conc,drug level (inf 2),clin_v2,False,21
+v2_ada,ADA (inf 2),clin_v2,False,21
+v3_alb,ALB (inf 3),clin_v3,False,42
+v3_inf,INF (inf 3),clin_v3,False,42
+v3_plt,PLT (inf 3),clin_v3,False,42
+v3_bio,biomarker (inf 3),clin_v3,False,42
+v3_bio_change,biomarker change (inf 3),clin_v3,False,42
+v3_conc,drug level (inf 3),clin_v3,False,42
+v3_ada,ADA (inf 3),clin_v3,False,42
+v4_alb,ALB (inf 4),clin_v4,False,98
+v4_inf,INF (inf 4),clin_v4,False,98
+v4_plt,PLT (inf 4),clin_v4,False,98
+v4_bio,biomarker (inf 4),clin_v4,False,98
+v4_bio_change,biomarker change (inf 4),clin_v4,False,98
+v4_conc,drug level (inf 4),clin_v4,False,98
+v4_ada,ADA (inf 4),clin_v4,False,98
+v1_CL,CL (MAP to inf 2),pkpd_v1,True,21
+v1_V1,V1 (MAP to inf 2),pkpd_v1,True,21
+v1_BASE,BASE (MAP to inf 2),pkpd_v1,True,21
+v1_IC50,IC50 (MAP to inf 2),pkpd_v1,True,21
+v1_Cave,Cave (MAP to inf 2),pkpd_v1,True,21
+v2_CL,CL (MAP to inf 3),pkpd_v2,True,42
+v2_V1,V1 (MAP to inf 3),pkpd_v2,True,42
+v2_BASE,BASE (MAP to inf 3),pkpd_v2,True,42
+v2_IC50,IC50 (MAP to inf 3),pkpd_v2,True,42
+v2_Cave,Cave (MAP to inf 3),pkpd_v2,True,42
+v3_CL,CL (MAP to inf 4),pkpd_v3,True,98
+v3_V1,V1 (MAP to inf 4),pkpd_v3,True,98
+v3_BASE,BASE (MAP to inf 4),pkpd_v3,True,98
+v3_IC50,IC50 (MAP to inf 4),pkpd_v3,True,98
+v3_Cave,Cave (MAP to inf 4),pkpd_v3,True,98

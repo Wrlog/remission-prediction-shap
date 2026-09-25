@@ -72,6 +72,10 @@ def main():
     study = baseline.set_index("id").loc[ids, "study"].to_numpy()
     tt = truth.set_index("id").loc[ids]
     X_all.to_csv(out / "features.csv")
+    ladder, feature_info, design = F.design_tables()
+    ladder.to_csv(out / "ladder.csv", index=False)
+    feature_info.to_csv(out / "feature_info.csv", index=False)
+    (out / "design.json").write_text(json.dumps(design, indent=2))
     print(f"{len(ids)} patients ({n_excluded} without an outcome value), at target {y.mean():.3f}  [{time.time() - t0:.0f}s]")
 
     # cohort and missingness tables

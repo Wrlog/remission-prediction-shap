@@ -205,3 +205,53 @@ def pretty(col):
 def is_pkpd(col):
     return col in PKPD_COLUMNS
 
+
+
+BLOCK_LABELS = {
+    "base": "baseline clinical",
+    "clin_v2": "clinical at infusion 2",
+    "clin_v3": "clinical at infusion 3",
+    "clin_v4": "clinical at infusion 4",
+    "pkpd_v1": "PK/PD fit to infusion 2",
+    "pkpd_v2": "PK/PD fit to infusion 3",
+    "pkpd_v3": "PK/PD fit to infusion 4",
+}
+
+
+def design_tables():
+    """The ladder, the feature list and the design constants as plain tables,
+    so the dashboard can show them without importing this package."""
+    ladder = pd.DataFrame(
+        [
+            {
+                "step": step,
+                "label": LADDER_LABELS[step],
+                "blocks": " + ".join(BLOCK_LABELS[b] for b in _blocks(step)),
+                "n_features": len(ladder_columns(step)),
+                "known_day": availability(step),
+                "kind": "ladder" if step in LADDER else "check",
+            }
+            for step in [*LADDER, *CHECK_STEPS]
+        ]
+    )
+    feats = pd.DataFrame(
+        [
+            {
+                "feature": c,
+                "label": pretty(c),
+                "block": b,
+                "pkpd": is_pkpd(c),
+                "known_day": NOMINAL_VISIT_DAY[BLOCK_CUTOFF_VISIT[b]],
+            }
+            for b, cols in BLOCK_COLUMNS.items()
+            for c in cols
+        ]
+    )
+    design = {
+        "target": config.TARGET,
+        "outcome_window": list(config.OUTCOME_WINDOW),
+        "visit_days": {str(k): v for k, v in NOMINAL_VISIT_DAY.items()},
+        "maint_every": config.MAINT_EVERY,
+        "dose_mg_per_kg": config.DOSE_MG_PER_KG,
+    }
+    return ladder, feats, design

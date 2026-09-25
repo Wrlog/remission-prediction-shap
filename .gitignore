@@ -22,3 +22,6 @@ catboost_info/
 .idea/
 .DS_Store
 Thumbs.db
+
+# Dashboard build output; CI rebuilds it from results/
+site/

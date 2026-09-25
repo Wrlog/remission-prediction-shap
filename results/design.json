@@ -1,0 +1,15 @@
+{
+  "target": 200.0,
+  "outcome_window": [
+    315.0,
+    399.0
+  ],
+  "visit_days": {
+    "1": 0,
+    "2": 21,
+    "3": 42,
+    "4": 98
+  },
+  "maint_every": 56,
+  "dose_mg_per_kg": 5.0
+}
